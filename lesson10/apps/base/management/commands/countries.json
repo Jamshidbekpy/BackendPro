@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Uzbekistan",
+    "code": "UZ",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/uz.png"
+  },
+  {
+    "name": "United States",
+    "code": "US",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/us.png"
+  },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/de.png"
+  },
+  {
+    "name": "France",
+    "code": "FR",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/fr.png"
+  },
+  {
+    "name": "Russia",
+    "code": "RU",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/ru.png"
+  },
+  {
+    "name": "Japan",
+    "code": "JP",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/jp.png"
+  },
+  {
+    "name": "China",
+    "code": "CN",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/cn.png"
+  },
+  {
+    "name": "Turkey",
+    "code": "TR",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/tr.png"
+  },
+  {
+    "name": "Kazakhstan",
+    "code": "KZ",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/kz.png"
+  },
+  {
+    "name": "India",
+    "code": "IN",
+    "is_active": true,
+    "img": "https://flagcdn.com/w320/in.png"
+  }
+]
