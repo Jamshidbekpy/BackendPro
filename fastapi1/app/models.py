@@ -1,6 +1,4 @@
-from datetime import datetime, UTC
-
-from sqlalchemy import ForeignKey, Integer, String, Boolean, Table, Column, DateTime
+from sqlalchemy import ForeignKey, Integer, String, Boolean, Table, Column, DateTime, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from .database import Base, TimestampMixin
 
@@ -18,7 +16,7 @@ class User(Base, TimestampMixin):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     email: Mapped[str] = mapped_column(String(255), unique=True, nullable=False)
     hashed_password: Mapped[str] = mapped_column(String(255), nullable=False)
-    username: Mapped[str] = mapped_column(String(100), unique=True, nullable=False)
+    username: Mapped[str] = mapped_column(String(100), unique=True, nullable=True)
     avatar: Mapped[str] = mapped_column(String(255), nullable=True)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     is_admin: Mapped[bool] = mapped_column(Boolean, default=False)
@@ -114,8 +112,8 @@ class UserBook(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     current_page: Mapped[int] = mapped_column(Integer, default=0)
-    started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now(UTC))
-    finished_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now(UTC))
+    started_at: Mapped[DateTime] = mapped_column(DateTime, default=func.now())
+    finished_at: Mapped[DateTime] = mapped_column(DateTime, default=func.now())
 
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     book_id: Mapped[int] = mapped_column(ForeignKey("books.id"))
@@ -132,7 +130,7 @@ class Comment(Base):
     reply_to: Mapped[int] = mapped_column(
         Integer, ForeignKey("comments.id"), nullable=True
     )
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now(UTC))
+    created_at: Mapped[DateTime] = mapped_column(DateTime, default=func.now())
 
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     book_id: Mapped[int] = mapped_column(ForeignKey("books.id"))
